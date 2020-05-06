@@ -31,25 +31,19 @@ import sys
 import calendar
 from datetime import datetime
 
-# print("Number of arguments:", len(sys.argv), "arguments.")
-# print("Argument List:", str(sys.argv))
-
 today = datetime.today()
 thisYear = int(today.strftime("%Y"))
 thisMonth = int(today.strftime("%m"))
 
-# c = calendar.TextCalendar(calendar.SUNDAY)
-# calString = c.formatmonth(2025, 1)
-
 if(len(sys.argv) == 3):
   print(sys.argv)
-  cal3 = calendar.TextCalendar(calendar.SUNDAY)
-  cal3String = cal3.formatmonth(int(sys.argv[2]), int(sys.argv[1]))
-  print(cal3String)
+  cal = calendar.TextCalendar(calendar.SUNDAY)
+  calString = cal.formatmonth(int(sys.argv[2]), int(sys.argv[1]))
+  print(calString)
 elif(len(sys.argv) == 2):
-  cal2 = calendar.TextCalendar(calendar.SUNDAY)
-  cal2String = cal2.formatmonth(thisYear, int(sys.argv[1]))
-  print(cal2String)
+  cal = calendar.TextCalendar(calendar.SUNDAY)
+  calString = cal.formatmonth(thisYear, int(sys.argv[1]))
+  print(calString)
 elif(len(sys.argv) == 1):
   cal1 = calendar.TextCalendar(calendar.SUNDAY)
   cal1String = cal1.formatmonth(thisYear, thisMonth)
